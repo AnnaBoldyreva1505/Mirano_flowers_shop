@@ -1,0 +1,32 @@
+@use "../variables" as *;
+
+.filter {
+  &__wrapper {
+    border: none;
+  }
+
+  &__radio {
+    position: absolute;
+    appearance: none;
+  }
+
+  &__label {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    background: $white;
+    border-radius: 300px;
+    cursor: pointer;
+
+    transition: background 0.3s ease;
+  }
+
+  &__label:hover {
+  background-color: $light-orange;
+  color: $white;
+}
+
+  &__icon {
+    margin-right: 10px;
+  }
+}

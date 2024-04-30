@@ -1,0 +1,63 @@
+@use "../variables" as *;
+
+.hero {
+  padding: 60px 0;
+
+  &__head-group {
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    font-family: $second-family;
+    font-weight: 400;
+    font-size: clamp(
+      80px,
+      calc(80px + (40 * ((100vw - 1024px) / (1440 - 1024)))),
+      120px
+    );
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    color: $green;
+  }
+
+  &__subtitle {
+    font-family: $second-family;
+    font-style: italic;
+    font-weight: 400;
+    // font-size: 40px;
+    font-size: clamp(
+      32px,
+      calc(32px + (40 * ((100vw - 1024px) / (1440 - 1024)))),
+      40px
+    );
+    line-height: 1.3;
+    text-align: right;
+    color: $dark;
+  }
+
+  &__group-image {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 26px;
+  }
+
+  &__image {
+    object-fit: contain;
+    width: calc(284 / 1300 * 100%);
+    &_left {
+      width: calc(284 / 1300 * 100%);
+      border-radius: 400px 400px 400px 0px;
+    }
+
+    &_center {
+      width: calc(680 / 1300 * 100%);
+    }
+
+    &_right {
+      width: calc(284 / 1300 * 100%);
+      border-radius: 400px 0px 400px 400px;
+    }
+  }
+}
