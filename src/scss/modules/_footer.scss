@@ -1,0 +1,24 @@
+.footer {
+  text-align: center;
+  &_paragraph {
+  }
+
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo {
+  }
+
+  &__social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+  }
+
+  &__copyright {
+  }
+}

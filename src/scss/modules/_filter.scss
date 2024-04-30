@@ -18,7 +18,7 @@
     border-radius: 300px;
     cursor: pointer;
 
-    transition: background 0.3s ease;
+    transition: background-color 0.3s ease;
   }
 
   &__label:hover {
@@ -29,4 +29,8 @@
   &__icon {
     margin-right: 10px;
   }
+
+  &__radio:checked + &__label {
+  background-color: $light-orange;
+}
 }
