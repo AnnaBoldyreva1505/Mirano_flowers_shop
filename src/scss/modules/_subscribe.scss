@@ -1,7 +1,8 @@
 @use "../variables" as *;
 
 .subscribe {
-
+padding-top: 80px;
+padding-bottom: 140px;
   &__form {
   position: relative;
   max-width: 524px;
