@@ -1,8 +1,12 @@
 @use "../variables" as *;
+@use "../media" as *;
 
 .subscribe {
 padding-top: 80px;
 padding-bottom: 140px;
+  @include tablet {
+    padding: 60px 0 100px;
+  }
   &__form {
   position: relative;
   max-width: 524px;
@@ -20,6 +24,11 @@ padding-bottom: 140px;
     text-align: center;
     color: $green;
     margin-bottom: 40px;
+      @include tablet {
+        font-size: 32px;
+    margin-bottom: 24px;
+
+  }
   }
 
   &__input {

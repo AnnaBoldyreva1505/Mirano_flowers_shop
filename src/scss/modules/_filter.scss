@@ -1,14 +1,18 @@
 @use "../variables" as *;
+@use "../media" as *;
 
 .filter {
   &__container {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 32px;
+    flex-wrap: wrap;
   }
 
   &__wrapper {
     display: flex;
+    flex-wrap: wrap;
     border: none;
     border: 0;
     padding: 0;
@@ -16,6 +20,9 @@
     gap: 12px;
     &_choices {
       gap: 64px;
+      @include mobile {
+        gap: 40px;
+      }
     }
   }
 
@@ -32,6 +39,9 @@
     border-radius: 300px;
     color: $dark;
     cursor: pointer;
+    // min-height: 72px;
+          @include mobile {
+   padding: 10px 12px;      }
 
     &:hover {
       background-color: $orange;
@@ -50,22 +60,28 @@
 
   &__icon {
     margin-right: 10px;
+     @include mobile {
+   width: 24px;
+  height: 24px;     }
   }
 
   &__choices {
   }
 
   &__select {
-     display: flex;
+    display: flex;
     align-items: center;
     gap: 8px;
 
     &:after {
-      content: '';
+      content: "";
       width: 8px;
       height: 8px;
-      background: url('/img/down.svg') no-repeat center/contain;
+      background: url("/img/down.svg") no-repeat center/contain;
     }
+  }
+
+  &__choices-box {
   }
 
   &__input-price {
@@ -89,38 +105,3 @@
     display: none;
   }
 }
-
-// .filter {
-//   &__wrapper {
-//     border: none;
-//   }
-
-//   &__radio {
-//     position: absolute;
-//     appearance: none;
-//   }
-
-//   &__label {
-//     display: inline-flex;
-//     align-items: center;
-//     padding: 10px 20px;
-//     background: $white;
-//     border-radius: 300px;
-//     cursor: pointer;
-
-//     transition: background-color 0.3s ease;
-//   }
-
-//   &__label:hover {
-//   background-color: $light-orange;
-//   color: $white;
-// }
-
-//   &__icon {
-//     margin-right: 10px;
-//   }
-
-//   &__radio:checked + &__label {
-//   background-color: $light-orange;
-// }
-// }

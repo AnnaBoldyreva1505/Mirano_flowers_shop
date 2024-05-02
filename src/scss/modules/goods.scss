@@ -1,7 +1,11 @@
 @use "../variables" as *;
+@use "../media" as *;
 
 .goods {
   padding: 60px 0;
+  @include tablet {
+    padding: 40px 0;
+  }
 
   &__title {
     font-family: $second-family;
@@ -11,13 +15,25 @@
     text-align: center;
     color: $green;
     margin-bottom: 40px;
+    @include tablet {
+      font-size: 32px;
+      margin-bottom: 24px;
+    }
   }
 
   &__list {
     display: grid;
-    grid-template-columns: repeat(3, 310px);
+    grid-template-columns: repeat(auto-fit, 310px);
+    max-width: 970px;
+    margin: 0 auto;
     justify-content: center;
     gap: 24px 20px;
+
+
+    @include mobile {
+      grid-template-columns: repeat(2, minmax(140px, 1fr));
+      column-gap: 12px;
+    }
   }
 
   &__item {
@@ -36,28 +52,49 @@
   display: flex;
   flex-direction: column;
 
+  @include mobile {
+    min-height: 380px;
+    border-radius: 20px;
+  }
+
   &__image {
     object-fit: cover;
     width: 100%;
     height: 359px;
+    @include mobile {
+      height: 180px;
+    }
   }
 
-  &__conten {
+  &__content {
     padding: 32px 16px;
     flex-grow: 1;
-    display: grid;
-    grid-template-rows: 1fr min-content;
-    grid-template-columns: max-content 1fr;
-    justify-content: space-between;
-    align-items: center;
+    display: flex;
+    flex-direction: column;
     gap: 16px;
+    @include mobile {
+      padding: 16px 12px;
+    }
   }
 
   &__title {
+    flex-grow: 1;
     font-weight: 400;
     font-size: 18px;
-    align-self: self-start;
-    grid-column: 1 / -1;
+       @include mobile {
+      font-size: 14px;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    @include mobile {
+      align-items: stretch;
+      flex-direction: column;
+    }
   }
 
   &__date {
@@ -66,6 +103,9 @@
     background-repeat: no-repeat;
     background-position: left bottom;
     font-size: 14px;
+           @include mobile {
+      font-size: 12px;
+    }
   }
 
   &__button {
@@ -92,5 +132,9 @@
     background-position: left bottom;
     font-size: 14px;
     align-self: end;
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }
