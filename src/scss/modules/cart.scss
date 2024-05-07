@@ -1,0 +1,105 @@
+@use "../variables" as *;
+@use "../media" as *;
+
+.cart {
+  // display: none;
+  padding-top: 100px;
+  &__container {
+    border-radius: 32px;
+    padding: 24px 16px;
+    max-width: 310px;
+    background-color: $white;
+  }
+
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+  }
+
+  &__title {
+    font-size: 28px;
+    color: $dark;
+  }
+
+  &__close {
+  }
+
+  &__date-delivery {
+    padding-left: 20px;
+    background-image: url("/img/delivery.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    font-size: 14px;
+    // padding-bottom: 16px;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__list {
+  }
+
+  &__item {
+    padding: 16px 0;
+    border-bottom: 1px solid rgba($dark, 0.04);
+    display: grid;
+    grid-template-columns: 54px 1fr min-content;
+    gap: 8px 12px;
+    grid-template-areas:
+      "image title title"
+      "image counter price";
+  }
+
+  &__image {
+    grid-area: image;
+    border-radius: 12px;
+    width: 54px;
+    height: 54px;
+  }
+
+  &__item-title {
+    grid-area: title;
+    font-size: 14px;
+  }
+
+  &__counter {
+    grid-area: counter;
+  }
+
+  &__counter-btn {
+    font-size: 14px;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    background-color: $bg;
+  }
+
+  &__counter-input {
+    width: 30px;
+    height: 30px;
+    border: none;
+  }
+
+  &__price {
+    grid-area: price;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 310px;
+  }
+
+  &__order-btn {
+    border-radius: 32px;
+    padding: 9px 16px 8px 16px;
+    width: 123px;
+    height: 40px;
+    color: $white;
+    background: $light-orange;
+  }
+}
