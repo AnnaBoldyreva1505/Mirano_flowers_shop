@@ -99,6 +99,10 @@
     padding: 24px;
     border-radius: 12px;
 
+    &_type {
+      padding: 16px;
+    }
+
     @include mobile {
       /* Mobile styles go here if needed */
     }
@@ -121,16 +125,22 @@
   }
 
   &__type-list {
-    /* Add styles for type-list if needed */
+   
   }
 
   &__type-item {
     margin-bottom: 8px;
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
 
   &__type-button {
     white-space: nowrap;
     &:hover {
+      color: $light-orange;
+    }
+      &_active {
       color: $orange;
     }
   }

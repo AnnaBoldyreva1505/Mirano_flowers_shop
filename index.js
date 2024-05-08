@@ -77,6 +77,20 @@ choices.forEach((choice) => {
   });
 });
 
+const cart = document.querySelector(".cart");
+const headerCartBtn = document.querySelector(".header__cart-button");
+const cartClose = document.querySelector(".cart__close");
+
+headerCartBtn.addEventListener("click", () => {
+  cart.classList.toggle("cart_open")
+});
+
+cartClose.addEventListener("click", () => {
+    cart.classList.remove("cart_open");
+
+});
+
+
 // import "@/scss/index.scss";
 
 // const header = document.querySelector(".header");
