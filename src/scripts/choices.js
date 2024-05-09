@@ -1,8 +1,5 @@
 export const initChoices = () => {
-
   const choices = document.querySelectorAll(".choices");
-
-
 
   const adjustElementPosition = (element, count = 0) => {
     const rect = element.getBoundingClientRect();
@@ -36,7 +33,6 @@ export const initChoices = () => {
     });
   };
 
-
   choices.forEach((choice) => {
     const btn = choice.querySelector(".choices__button");
     const box = choice.querySelector(".choices__box");
@@ -57,6 +53,17 @@ export const initChoices = () => {
 
     window.addEventListener("resize", () => {
       adjustElementPosition(box);
+    });
+
+    document.addEventListener("click", ({ target }) => {
+      let clickInside = target.closest(".choices");
+
+      if (!clickInside) {
+        const openChoices = document.querySelectorAll(".choices__box_open");
+        openChoices.forEach((openChoice) => {
+          openChoice.classList.remove("choices__box_open");
+        });
+      }
     });
   });
 };
