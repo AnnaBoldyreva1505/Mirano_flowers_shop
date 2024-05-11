@@ -48,10 +48,10 @@
     }
   }
 
-  &__item {
-  }
-
-  &__card {
+  &__no-product {
+    text-align: center;
+    font-size: 24px;
+    grid-column: 1 / -1;
   }
 }
 
@@ -130,8 +130,6 @@
     color: $white;
   }
 
-  &__price {
-  }
 
   &__button-text {
     display: none;
@@ -149,4 +147,6 @@
       font-size: 12px;
     }
   }
+
+
 }

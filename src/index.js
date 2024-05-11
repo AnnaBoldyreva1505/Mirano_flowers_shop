@@ -6,6 +6,7 @@ import { showProducts } from "./scripts/showProducts";
 import { fetchProducts } from "./scripts/API";
 import { initChoicesType } from "./scripts/choicesType";
 import { filterProducts } from "./scripts/filterProducts";
+import { initSearchProduct } from "./scripts/searchProduct";
 ("@/scripts/headerFixer");
 
 const init = () => {
@@ -16,6 +17,7 @@ const init = () => {
   // fetchProducts({type: "bouquets"});
   showProducts();
   filterProducts();
+  initSearchProduct();
 };
 
 document.addEventListener("DOMContentLoaded", init);
