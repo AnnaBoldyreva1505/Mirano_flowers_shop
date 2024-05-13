@@ -1,10 +1,10 @@
-import { store } from "./store";
+import { productStore } from "./store";
 
 export const initChoicesType = () => {
   const typeChoices = document.querySelector(".filter__choices_type");
 
   const updateTypeChoicesVisibility = () => {
-    const category = store.getCategories();
+    const category = productStore.getCategories();
 
     const categoryList = () => {
       const listParent = document.querySelector(".filter__type-list");
@@ -28,11 +28,11 @@ export const initChoicesType = () => {
       typeChoices.style.display = "none";
     }
   };
-  store.subscribe(updateTypeChoicesVisibility);
+  productStore.subscribe(updateTypeChoicesVisibility);
   updateTypeChoicesVisibility();
 };
 
-// import { store } from "./store";
+// import { productStore} from "./store";
 
 // const renderCategories = (categoryNames, parentElement) => {
 //   parentElement.innerHTML = "";

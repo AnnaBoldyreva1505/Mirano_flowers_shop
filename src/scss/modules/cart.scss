@@ -28,7 +28,8 @@
   &__container {
     border-radius: 32px;
     padding: 24px 16px;
-    max-width: 310px;
+    width: 310px;
+    max-width: 100%;
     background-color: $white;
     min-height: 778px;
     display: flex;
@@ -38,8 +39,9 @@
       width: 100%;
     }
 @include mobile {
-  min-height: auto;
+  min-height: 350px;
 max-width: 292px;
+width: 100%;
 }
   }
 
