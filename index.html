@@ -177,13 +177,13 @@
                     class="filter__input-price"
                     type="text"
                     placeholder="от"
-                    name = "minPrice"
+                    name="minPrice"
                   />
                   <input
                     class="filter__input-price"
                     type="text"
                     placeholder="до"
-                    name = "maxPrice"
+                    name="maxPrice"
                   />
                 </fieldset>
               </div>
@@ -198,7 +198,7 @@
               >
                 <ul class="filter__type-list">
                   <li class="filter__type-item">
-                    <button class="filter__type-button" >Монобукеты</button>
+                    <button class="filter__type-button">Монобукеты</button>
                   </li>
 
                   <li class="filter__type-item">
@@ -223,9 +223,7 @@
           <div class="goods__box">
             <h2 class="goods__title">Цветы</h2>
 
-            <ul class="goods__list">
-
-            </ul>
+            <ul class="goods__list"></ul>
           </div>
           <section class="cart">
             <div class="cart__container">
@@ -260,9 +258,7 @@
               </div>
               <p class="cart__date-delivery">сегодня в 14.00</p>
 
-              <ul class="cart__list">
-               
-              </ul>
+              <ul class="cart__list"></ul>
               <div class="cart__footer">
                 <button type="button" class="cart__order-btn">Оформить</button>
                 <p class="cart__price cart__price_total">300$</p>
@@ -378,65 +374,97 @@
     </footer>
 
     <div class="modal">
-      <h2 class="modal__title">Оформить заказ</h2>
-      <div class="modal__body">
-        <div class="modal__customer-details">
-          <h3 class="modal__subtitle">Данные заказчика</h3>
-          <input class="modal__input" type="text" placeholder="Имя" />
-          <input class="modal__input" type="text" placeholder="Телефон" />
-        </div>
-        <div class="modal__recipient-details">
-          <h3 class="modal__subtitle">Данные получателя</h3>
-          <input class="modal__input" type="text" placeholder="Имя" />
-          <input class="modal__input" type="text" placeholder="Телефон" />
-        </div>
-        <div class="modal__address-details">
-          <h3 class="modal__subtitle">Адрес доставки</h3>
-          <fieldset class="modal__address">
+      <div class="order__wrapper">
+        <h2 class="modal__title">Оформить заказ</h2>
+        <form class="modal__body order__form" id="order">
+          <div class="modal__customer-details">
+            <h3 class="modal__subtitle">Данные заказчика</h3>
             <input
-              class="modal__input modal__input-address modal__input-address-street"
+              class="modal__input"
               type="text"
-              placeholder="Улица"
+              name="name-buyer"
+              placeholder="Имя"
             />
             <input
-              class="modal__input modal__input-address modal__input-address-house"
+              class="modal__input"
               type="text"
-              placeholder="Дом"
+              name="phone-buyer"
+              placeholder="Телефон"
             />
+          </div>
+          <div class="modal__recipient-details">
+            <h3 class="modal__subtitle">Данные получателя</h3>
             <input
-              class="modal__input modal__input-address modal__input-address-house"
+              class="modal__input"
               type="text"
-              placeholder="Квартира"
+              name="name-recipient"
+              placeholder="Имя"
             />
-          </fieldset>
-        </div>
-        <div class="modal__payment-method">
-          <h3 class="modal__subtitle">Оплата</h3>
-          <label class="modal__radio-label">
             <input
-              class="modal__radio-input"
-              type="radio"
-              name="payment"
-              value="online"
-              checked
+              class="modal__input"
+              type="text"
+              name="phone-recipient"
+              placeholder="Телефон"
             />
-            Онлайн
-          </label>
-        </div>
-        <div class="modal__delivery-details">
-          <p class="modal__date">Доставка 10.05.</p>
-          <select class="modal__select" name="delivery-time">
-            <option value="9-12">с 9:00 до 12:00</option>
-            <option value="12-15">с 12:00 до 15:00</option>
-            <option value="15-18">с 15:00 до 18:00</option>
-            <option value="18-21">с 18:00 до 21:00</option>
-          </select>
-        </div>
-        <div class="modal__price">
-          <p class="modal__price-value">90$</p>
-          <button type="button" class="modal__btn-order">Заказать</button>
-        </div>
+          </div>
+          <div class="modal__address-details">
+            <h3 class="modal__subtitle">Адрес доставки</h3>
+            <fieldset class="modal__address">
+              <input
+                class="modal__input modal__input-address modal__input-address-street"
+                type="text"
+                name="street"
+                placeholder="Улица"
+              />
+              <input
+                class="modal__input modal__input-address modal__input-address-house"
+                type="text"
+                name="house"
+                placeholder="Дом"
+              />
+              <input
+                class="modal__input modal__input-address modal__input-address-house"
+                type="text"
+                name="appartment"
+                placeholder="Квартира"
+              />
+            </fieldset>
+          </div>
+          <div class="modal__payment-method">
+            <h3 class="modal__subtitle">Оплата</h3>
+            <label class="modal__radio-label">
+              <input
+                class="modal__radio-input"
+                type="radio"
+                name="payment-online"
+                value="online"
+                checked
+              />
+              Онлайн
+            </label>
+          </div>
+          <div class="modal__delivery-details">
+            <label class="modal__date" for="delivery">Доставка 10.05.</label>
+            <input type="hidden" name="delivery-date" value="10.05" />
+
+            <div class="order__select-wrapper">
+              <select class="modal__select" name="delivery-time" id="delivery">
+                <option value="9-12">с 9:00 до 12:00</option>
+                <option value="12-15">с 12:00 до 15:00</option>
+                <option value="15-18">с 15:00 до 18:00</option>
+                <option value="18-21">с 18:00 до 21:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal__price">
+            <p class="modal__price-value">90$</p>
+            <button type="submit" class="modal__btn-order" form="order">
+              Заказать
+            </button>
+          </div>
+        </form>
       </div>
+      <button class="order__close" type="button">&times;</button>
     </div>
   </body>
 </html>

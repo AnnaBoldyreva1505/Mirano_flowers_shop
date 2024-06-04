@@ -11,7 +11,7 @@ const formatQueryString = (params) => {
   return `${searchParams.toString()}`;
 };
 
-export const API_URL = "http://localhost:3000";
+export const API_URL = "https://friendly-pleasant-plough.glitch.me";
 
 export const fetchProducts = async (params = {}) => {
   try {
