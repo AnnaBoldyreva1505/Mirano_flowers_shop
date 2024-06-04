@@ -1,23 +1,22 @@
 import "@/scss/index.scss";
-import { initHeaderFixer } from "./scripts/headerFixer";
+import { initHeaderFixer } from "@/scripts/headerFixer";
 import { initChoices } from "./scripts/choices";
 import { initCart } from "./scripts/cart";
-import { showProducts } from "./scripts/showProducts";
-import { fetchProducts } from "./scripts/API";
+import { renderProducts } from "./scripts/renderProducts";
 import { initChoicesType } from "./scripts/choicesType";
 import { filterProducts } from "./scripts/filterProducts";
-import { initSearchProduct } from "./scripts/searchProduct";
-("@/scripts/headerFixer");
+import { initSearchProducts } from "./scripts/searchProducts";
+import { initOrder } from "./scripts/orderController";
 
 const init = () => {
   initHeaderFixer();
   initChoices();
   initChoicesType();
   initCart();
-  // fetchProducts({type: "bouquets"});
-  showProducts();
+  initSearchProducts();
+  renderProducts();
   filterProducts();
-  initSearchProduct();
+  initOrder();
 };
 
 document.addEventListener("DOMContentLoaded", init);

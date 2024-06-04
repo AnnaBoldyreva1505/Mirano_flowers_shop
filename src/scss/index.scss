@@ -1,18 +1,15 @@
-@use "./fonts.scss";
-@use "./base.scss";
-@use "./modules/header.scss";
-@use "./modules/hero.scss";
-@use "./modules/subscribe.scss";
-@use "./modules/filter.scss";
-@use "./modules/goods.scss";
-@use "./modules/modal.scss";
-@use "./modules/cart.scss";
-@use "./modules/preload.scss";
-
-
-
-
-
-@use "./modules/footer.scss";
+@use "fonts";
+@use "base";
+@use "./modules/header";
+@use "./modules/hero";
+@use "./modules/filter";
+@use "./modules/choices";
+@use "./modules/goods";
+@use "./modules/card";
+@use "./modules/subscribe";
+@use "./modules/footer";
+@use "./modules/cart";
+@use "./modules/preload";
+@use "./modules/order";
 
 @import "normalize.css";

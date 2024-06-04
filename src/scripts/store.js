@@ -1,4 +1,4 @@
-import { API_URL } from "./API";
+import { API_URL, fetchProducts } from "./API";
 
 class Store {
   constructor() {
@@ -17,21 +17,52 @@ class Store {
 class ProductStore extends Store {
   constructor() {
     super();
-    this.products = [];
+    this._products = [];
     this.categories = new Set();
+    this._loading = false;
+    this.error = null;
   }
 
-  getProducts() {
-    return this.products;
-  }
-  getCategories() {
-    return this.categories;
+  fetchProducts() {
+    const _self = this;
+    return async (params) => {
+      try {
+        _self.error = null;
+        _self.loading = true;
+        _self.products = await fetchProducts(params);
+        _self.loading = false;
+        _self.notifyObservers();
+      } catch (error) {
+        console.log("error: ", error);
+        _self.error = error;
+        _self.products = [];
+        _self.loading = false;
+        _self.notifyObservers();
+      }
+    };
   }
 
-  setProducts(newProducts) {
-    this.products = newProducts;
+  get products() {
+    return this._products;
+  }
+
+  get loading() {
+    return this._loading;
+  }
+
+  set loading(bool) {
+    this._loading = bool;
+    this.notifyObservers();
+  }
+
+  set products(newProducts) {
+    this._products = newProducts;
     this.updateCategories(newProducts);
     this.notifyObservers();
+  }
+
+  getCategories() {
+    return this.categories;
   }
 
   updateCategories(products) {
@@ -44,7 +75,6 @@ class ProductStore extends Store {
         });
       }
     });
-
     this.notifyObservers();
   }
 }
@@ -66,12 +96,17 @@ class CartStore extends Store {
         method: "POST",
         credentials: "include",
       });
+
       if (!response.ok) {
-        throw new Error(`HTTP Error: ${response.status}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.error(err);
     }
+  }
+
+  getCart() {
+    return this.cart;
   }
 
   async fetchCart() {
@@ -80,20 +115,17 @@ class CartStore extends Store {
         method: "GET",
         credentials: "include",
       });
+
       if (!response.ok) {
-        throw new Error(`HTTP Error: ${response.status}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
       this.cart = data;
       this.notifyObservers();
-    } catch (error) {
-      console.log(error)
+    } catch (err) {
+      console.error(err);
     }
-  }
-
-  getCart() {
-    return this.cart;
   }
 
   async postCart({ id, quantity }) {
@@ -101,23 +133,31 @@ class CartStore extends Store {
       const response = await fetch(`${API_URL}/api/cart/items`, {
         method: "POST",
         credentials: "include",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ productId: id, quantity }),
       });
+
       if (!response.ok) {
-        throw new Error(`HTTP Error: ${response.status}`);
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
 
       const data = await response.json();
       this.cart = data;
       this.notifyObservers();
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.error(err);
     }
   }
 
   async addProductCart(id) {
     await this.postCart({ id, quantity: 1 });
+  }
+
+  clearCart() {
+    this.cart = [];
+    this.notifyObservers();
   }
 }
 

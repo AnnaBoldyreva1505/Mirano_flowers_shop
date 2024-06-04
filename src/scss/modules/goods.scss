@@ -1,11 +1,8 @@
-@use "../variables" as *;
+@use "../varibles" as *;
 @use "../media" as *;
 
 .goods {
   padding: 60px 0;
-  @include tablet {
-    padding: 40px 0;
-  }
 
   &__container {
     display: flex;
@@ -17,16 +14,23 @@
   &__box {
     flex-grow: 1;
     max-width: 970px;
+    min-height: 310px;
+  }
+
+  @include tablet {
+    padding: 40px 0;
   }
 
   &__title {
     font-family: $second-family;
+    font-weight: 400;
     font-size: 50px;
     line-height: 1.2;
     text-transform: uppercase;
     text-align: center;
     color: $green;
     margin-bottom: 40px;
+
     @include tablet {
       font-size: 32px;
       margin-bottom: 24px;
@@ -36,117 +40,19 @@
   &__list {
     display: grid;
     grid-template-columns: repeat(auto-fit, 310px);
-    // max-width: 970px;
     margin: 0 auto;
     justify-content: center;
     gap: 24px 20px;
-
 
     @include mobile {
       grid-template-columns: repeat(2, minmax(140px, 1fr));
       column-gap: 12px;
     }
   }
-
   &__no-product {
     text-align: center;
     font-size: 24px;
+    color: $green;
     grid-column: 1 / -1;
   }
-}
-
-.card {
-  background-color: $white;
-  border-radius: 32px;
-  overflow: hidden;
-  min-height: 531px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-
-  @include mobile {
-    min-height: 380px;
-    border-radius: 20px;
-  }
-
-  &__image {
-    object-fit: cover;
-    width: 100%;
-    height: 359px;
-    @include mobile {
-      height: 180px;
-    }
-  }
-
-  &__content {
-    padding: 32px 16px;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-    @include mobile {
-      padding: 16px 12px;
-    }
-  }
-
-  &__title {
-    flex-grow: 1;
-    font-weight: 400;
-    font-size: 18px;
-       @include mobile {
-      font-size: 14px;
-    }
-  }
-
-  &__footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 16px;
-    @include mobile {
-      align-items: stretch;
-      flex-direction: column;
-    }
-  }
-
-  &__date {
-    padding-left: 20px;
-    background-image: url("/img/delivery.svg");
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    font-size: 14px;
-           @include mobile {
-      font-size: 12px;
-    }
-  }
-
-  &__button {
-    background: $light-orange;
-    border-radius: 32px;
-    padding: 8px 16px;
-    min-width: 120px;
-
-    font-family: $font-family;
-    color: $white;
-  }
-
-
-  &__button-text {
-    display: none;
-  }
-
-  &__date-delivery {
-    padding-left: 20px;
-    background-image: url("/img/delivery.svg");
-    background-repeat: no-repeat;
-    background-position: left bottom;
-    font-size: 14px;
-    align-self: end;
-
-    @include mobile {
-      font-size: 12px;
-    }
-  }
-
-
 }

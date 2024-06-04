@@ -1,442 +1,300 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Mirano</title>
 
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="/favicon/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="/favicon/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="/favicon/favicon-16x16.png"
-    />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link
-      rel="mask-icon"
-      href="/favicon/safari-pinned-tab.svg"
-      color="#5bbad5"
-    />
-    <link rel="shortcut icon" href="/favicon/favicon.ico" />
-    <meta name="msapplication-TileColor" content="#da532c" />
-    <meta name="msapplication-config" content="/browserconfig.xml" />
-    <meta name="theme-color" content="#ffffff" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mirano</title>
 
-    <script type="module" src="/src/index.js"></script>
-  </head>
-  <body>
-    <header class="header">
-      <div class="container header__container">
-        <form class="header__form" action="#">
-          <input
-            class="header__input"
-            type="search"
-            name="search"
-            placeholder="Букет из роз"
-          />
-          <button class="header__search-button" type="button">
-            <svg
-              width="20"
-              height="12"
-              viewBox="0 0 20 12"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M13.3333 0.166626C13.3333 0.784959 13.9442 1.70829 14.5625 2.48329C15.3575 3.48329 16.3075 4.35579 17.3967 5.02163C18.2133 5.52079 19.2033 5.99996 20 5.99996M20 5.99996C19.2033 5.99996 18.2125 6.47913 17.3967 6.97829C16.3075 7.64496 15.3575 8.51746 14.5625 9.51579C13.9442 10.2916 13.3333 11.2166 13.3333 11.8333M20 5.99996L4.76837e-07 5.99996"
-                stroke="white"
-              />
-            </svg>
-          </button>
-        </form>
+  <link rel="apple-touch-icon" sizes="180x180"
+    href="/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32"
+    href="/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16"
+    href="/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="shortcut icon" href="/favicon/favicon.ico">
+  <meta name="msapplication-TileColor" content="#00aba9">
+  <meta name="msapplication-config" content="/browserconfig.xml">
+  <meta name="theme-color" content="#ffffff">
 
-        <img
-          src="/img/logo.svg"
-          alt="Логотип цветочного магазина Mirano"
-          class="header__logo"
-        />
-        <button class="header__cart-button" type="button">0</button>
-      </div>
-    </header>
-    <main class="main">
-      <section class="hero">
-        <div class="container hero__container">
-          <div class="hero__head-group">
-            <h1 class="hero__title">Авторские букеты</h1>
-            <p class="hero__subtitle">и подарки</p>
-          </div>
-          <figure class="hero__group-image">
-            <img
-              class="hero__image hero__image_left"
-              src="/img/right.png"
-              alt="Букет в вазе"
-            />
-            <svg
-              class="hero__image hero__image_center"
-              role="img"
-              width="680"
-              height="588"
-              viewBox="0 0 680 588"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              preserveAspectRatio="xMidYMid slice"
-            >
-              <clippath id="hero">
-                <path
-                  d="M680 112.187C680 137.954 653.568 161.688 609.146 180.61C653.568 211.682 680 250.658 680 292.973C680 335.869 652.836 375.335 607.304 406.613C652.836 425.66 680 449.692 680 475.813C680 537.649 527.777 587.776 340 587.776C152.223 587.776 0 537.649 0 475.813C0 449.692 27.1636 425.66 72.6961 406.613C27.1636 375.335 0 335.869 0 292.973C0 250.658 26.4319 211.682 70.854 180.61C26.4319 161.688 0 137.954 0 112.187C0 50.3515 152.223 0.223633 340 0.223633C527.777 0.223633 680 50.3515 680 112.187Z"
-                />
-              </clippath>
-              <image id="image0_10_64" width="1887" height="2831" />
-              <image
-                xlink:href="/img/center.png"
-                width="100%"
-                height="100%"
-                clip-path="url(#hero)"
-                preserveAspectRatio="xMidYMid slice"
-              />
-            </svg>
-            <img
-              class="hero__image hero__image_right"
-              src="/img/left.png"
-              alt="Букет в горшке"
-            />
-          </figure>
+  <script type="module" src="/src/index.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container header__container">
+      <form class="header__form" action="#">
+        <input class="header__input" type="search" name="search"
+          placeholder="Букет из роз">
+
+        <button class="header__search-button">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13.3333 4.16663C13.3333 4.78496 13.9442 5.70829 14.5625 6.48329C15.3575 7.48329 16.3075 8.35579 17.3967 9.02163C18.2133 9.52079 19.2033 9.99996 20 9.99996M20 9.99996C19.2033 9.99996 18.2125 10.4791 17.3967 10.9783C16.3075 11.645 15.3575 12.5175 14.5625 13.5158C13.9442 14.2916 13.3333 15.2166 13.3333 15.8333M20 9.99996H4.76837e-07"
+              stroke="white" />
+          </svg>
+        </button>
+      </form>
+
+      <img class="header__logo" src="/img/logo.svg"
+        alt="Логотип Mirano Flower Boutique">
+
+      <button class="header__cart-button">0</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <div class="hero__head-group">
+          <h1 class="hero__title">Авторские букеты</h1>
+          <p class="hero__subtitle">и подарки</p>
         </div>
-      </section>
 
-      <section class="filter container">
-        <h2 class="visually-hidden">Категории</h2>
-        <form class="filter__container">
-          <fieldset class="filter__wrapper">
-            <input
-              class="filter__radio"
-              type="radio"
-              name="type"
-              value="bouquets"
-              checked
-              id="flower"
-            />
-            <label class="filter__label" for="flower">
-              <img class="filter__icon" src="/img/flowers.png" alt="Цветы" />
-              Цветы
-            </label>
+        <figure class="hero__group-image">
+          <picture class="hero__image hero__image_left">
+            <source
+              srcset="/img/hero-left@1x.avif 1x, /img/hero-left@2x.avif 2x"
+              type="image/avif">
+            <source
+              srcset="/img/hero-left@1x.webp 1x, /img/hero-left@2x.webp 2x"
+              type="image/webp">
+            <img src="/img/hero-left@1x.jpg" srcset="/img/hero-left@2x.jpg 2x"
+              alt="Букет цветов в банке. В бкете ярко-ораньжевые розы, ораньжевые тюльпаны и львиный зев. Дополнительно в композию включены белые цветы и зеленые элементы, придающие букету объем и разнообразие">
+          </picture>
 
-            <input
-              class="filter__radio"
-              type="radio"
-              name="type"
-              value="toys"
-              id="toys"
-            />
-            <label class="filter__label" for="toys">
-              <img
-                class="filter__icon"
-                src="/img/bear.png"
-                alt="Игрушка медведя"
-              />
-              Игрушки
-            </label>
+          <svg class="hero__image hero__image_center" role="img"
+            aria-label="Букет цветов в вазе, включающий нежные розовые розы, розовые хризантемы и другие цветы пастельных цветов, размещенные в беловй вазе в форме головы."
+            width="680" height="588" viewBox="0 0 680 588" fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            preserveAspectRatio="xMidYMid slice">
+            <clippath id="hero">
+              <path
+                d="M680 112.187C680 137.954 653.568 161.688 609.146 180.61C653.568 211.682 680 250.658 680 292.973C680 335.869 652.836 375.335 607.304 406.613C652.836 425.66 680 449.692 680 475.813C680 537.649 527.777 587.776 340 587.776C152.223 587.776 0 537.649 0 475.813C0 449.692 27.1636 425.66 72.6961 406.613C27.1636 375.335 0 335.869 0 292.973C0 250.658 26.4319 211.682 70.854 180.61C26.4319 161.688 0 137.954 0 112.187C0 50.3515 152.223 0.223633 340 0.223633C527.777 0.223633 680 50.3515 680 112.187Z" />
+            </clippath>
 
-            <input
-              class="filter__radio"
-              type="radio"
-              id="postcards"
-              value="postcards"
-              name="type"
-            />
-            <label class="filter__label" for="postcards">
-              <img
-                class="filter__icon"
-                src="/img/postcard.png"
-                alt="Иконка открытка"
-              />
-              Открытки
-            </label>
+            <foreignobject clip-path="url(#hero)" width="100%" height="100%">
+              <div class="hero__image-center"></div>
+            </foreignobject>
+
+          </svg>
+
+
+          <picture class="hero__image hero__image_right">
+            <source
+              srcset="/img/hero-right@1x.avif 1x, /img/hero-right@2x.avif 2x"
+              type="image/avif">
+            <source
+              srcset="/img/hero-right@1x.webp 1x, /img/hero-right@2x.webp 2x"
+              type="image/webp">
+            <img src="/img/hero-right@1x.jpg" srcset="/img/hero-right@2x.jpg 2x"
+              alt="Букет цветов в банке. В бкете ярко-ораньжевые розы, ораньжевые тюльпаны и львиный зев. Дополнительно в композию включены белые цветы и зеленые элементы, придающие букету объем и разнообразие">
+          </picture>
+        </figure>
+      </div>
+    </section>
+
+    <section class="filter">
+      <h2 class="visually-hidden"></h2>
+      <div class="container">
+        <form class="filter__form">
+          <fieldset class="filter__group">
+            <input class="filter__radio" type="radio" name="type"
+              value="bouquets" id="flower" checked>
+            <label class="filter__label filter__label_flower"
+              for="flower">Цветы</label>
+
+            <input class="filter__radio" type="radio" name="type" value="toys"
+              id="toys">
+            <label class="filter__label filter__label_toys"
+              for="toys">Игрушки</label>
+
+            <input class="filter__radio" type="radio" name="type"
+              value="postcards" id="postcard">
+            <label class="filter__label filter__label_postcard"
+              for="postcard">Открытки</label>
           </fieldset>
 
-          <fieldset class="filter__wrapper filter__wrapper_choices">
-            <div class="filter__choices filter__choices_type choices">
-              <button class="filter__select choices__button" type="button">
-                Цена
-              </button>
+          <fieldset class="filter__group filter__group_choices">
+            <div class="filter__choices choices">
+              <button class="filter__select choices__btn"
+                type="button">Цена</button>
+
               <div class="choices__box filter__choices-box">
                 <fieldset class="filter__price">
-                  <input
-                    class="filter__input-price"
-                    type="text"
-                    placeholder="от"
-                    name = "minPrice"
-                  />
-                  <input
-                    class="filter__input-price"
-                    type="text"
-                    placeholder="до"
-                    name = "maxPrice"
-                  />
+                  <input class="filter__input-price" type="text" name="minPrice"
+                    placeholder="от">
+                  <input class="filter__input-price" type="text" name="maxPrice"
+                    placeholder="до">
                 </fieldset>
               </div>
             </div>
 
-            <div class="filter__choices choices">
-              <button class="filter__select choices__button" type="button">
-                Тип товара
-              </button>
+            <div class="filter__choices filter__choices_type choices">
+              <button class="filter__select choices__btn" type="button">Тип
+                товара</button>
+
               <div
-                class="choices__box filter__choices-box filter__choices-box_type"
-              >
+                class="choices__box filter__choices-box filter__choices-box_type">
                 <ul class="filter__type-list">
                   <li class="filter__type-item">
-                    <button class="filter__type-button" >Монобукеты</button>
-                  </li>
-
-                  <li class="filter__type-item">
-                    <button type="button" class="filter__type-button">
-                      Авторские букеты
-                    </button>
+                    <button class="filter__type-button"
+                      type="button">Монобукеты</button>
                   </li>
                   <li class="filter__type-item">
-                    <button type="button" class="filter__type-button">
-                      Букеты из сухоцветов
-                    </button>
+                    <button class="filter__type-button" type="button">Авторские
+                      букеты</button>
+                  </li>
+                  <li class="filter__type-item">
+                    <button class="filter__type-button" type="button">Цветы в
+                      коробке</button>
+                  </li>
+                  <li class="filter__type-item">
+                    <button class="filter__type-button" type="button">Цветы в
+                      корзине</button>
+                  </li>
+                  <li class="filter__type-item">
+                    <button class="filter__type-button" type="button">Букеты из
+                      сухоцветов</button>
                   </li>
                 </ul>
               </div>
             </div>
           </fieldset>
         </form>
-      </section>
+      </div>
+    </section>
 
-      <section class="goods">
-        <div class="container goods__container">
-          <div class="goods__box">
-            <h2 class="goods__title">Цветы</h2>
+    <section class="goods">
+      <div class="container goods__container">
+        <div class="goods__box">
+          <h2 class="goods__title">Цветы</h2>
 
-            <ul class="goods__list">
-
-            </ul>
-          </div>
-          <section class="cart">
-            <div class="cart__container">
-              <div class="cart__header">
-                <h3 class="cart__title">Ваш заказ</h3>
-                <button class="cart__close" type="button">
-                  <svg
-                    width="28"
-                    height="28"
-                    viewBox="0 0 28 28"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect
-                      x="5"
-                      y="5.70715"
-                      width="1"
-                      height="25"
-                      transform="rotate(-45 5 5.70715)"
-                      fill="#D17D2F"
-                    />
-                    <rect
-                      x="22.6777"
-                      y="5"
-                      width="1"
-                      height="25"
-                      transform="rotate(45 22.6777 5)"
-                      fill="#D17D2F"
-                    />
-                  </svg>
-                </button>
-              </div>
-              <p class="cart__date-delivery">сегодня в 14.00</p>
-
-              <ul class="cart__list">
-               
-              </ul>
-              <div class="cart__footer">
-                <button type="button" class="cart__order-btn">Оформить</button>
-                <p class="cart__price cart__price_total">300$</p>
-              </div>
-            </div>
-          </section>
-        </div>
-      </section>
-      <section class="subscribe">
-        <div class="container subscribe__container">
-          <h2 class="subscribe__title">Подпишись на&nbsp;рассылку</h2>
-          <form class="subscribe__form" action="#">
-            <input
-              class="subscribe__input"
-              type="email"
-              name="email"
-              placeholder="E-mail"
-            />
-            <button type="button" class="subscribe__send-button">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M4.16675 6.66667C4.78508 6.66667 5.70841 6.05583 6.48341 5.4375C7.48342 4.6425 8.35592 3.6925 9.02175 2.60333C9.52092 1.78667 10.0001 0.796667 10.0001 0M10.0001 0C10.0001 0.796667 10.4792 1.7875 10.9784 2.60333C11.6451 3.6925 12.5176 4.6425 13.5159 5.4375C14.2917 6.05583 15.2167 6.66667 15.8334 6.66667M10.0001 0V20"
-                  stroke="white"
-                />
-              </svg>
-            </button>
-          </form>
-        </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="container footer__container">
-        <img
-          src="/img/logo.svg"
-          alt="Логотип цветочного магазина Mirano"
-          class="footer__logo"
-        />
-
-        <address class="footer__address">
-          <a class="footer__mail" href="mailto:Mirano@gmail.com"
-            >Mirano@gmail.com</a
-          >
-
-          <ul class="footer__social-list">
-            <li class="footer__social-item">
-              <a href="#" class="footer__social-link footer__link"
-                ><svg
-                  width="28"
-                  height="28"
-                  viewBox="0 0 28 28"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M14 2.625C7.721 2.625 2.625 7.721 2.625 14C2.625 20.279 7.721 25.375 14 25.375C20.279 25.375 25.375 20.279 25.375 14C25.375 7.721 20.279 2.625 14 2.625ZM19.278 10.36C19.1074 12.1573 18.368 16.5253 17.9926 18.5386C17.8334 19.3918 17.5149 19.6761 17.2191 19.7103C16.5594 19.7671 16.0589 19.278 15.4219 18.8571C14.4209 18.1974 13.8521 17.7879 12.8853 17.1509C11.7591 16.4115 12.4871 16.002 13.1355 15.3423C13.3061 15.1716 16.2181 12.5212 16.275 12.2824C16.2829 12.2462 16.2818 12.2086 16.2719 12.173C16.262 12.1373 16.2436 12.1045 16.2181 12.0776C16.1499 12.0208 16.0589 12.0435 15.9792 12.0549C15.8769 12.0776 14.2844 13.1355 11.179 15.2285C10.724 15.5356 10.3145 15.6949 9.9505 15.6835C9.541 15.6721 8.7675 15.456 8.18738 15.2626C7.47075 15.0351 6.91337 14.91 6.95888 14.5119C6.98163 14.3071 7.266 14.1024 7.80063 13.8863C11.1221 12.4416 13.3289 11.4861 14.4323 11.0311C17.5945 9.71163 18.2429 9.48413 18.6751 9.48413C18.7661 9.48413 18.9823 9.50688 19.1188 9.62063C19.2325 9.71163 19.2666 9.83675 19.278 9.92775C19.2666 9.996 19.2894 10.2008 19.278 10.36Z"
-                    fill="#D17D2F"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li class="footer__social-item">
-              <a href="#" class="footer__social-link footer__link"
-                ><svg
-                  width="24"
-                  height="18"
-                  viewBox="0 0 24 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M9.66671 12.4999L15.7217 8.99992L9.66671 5.49992V12.4999ZM23.1534 3.36492C23.305 3.91325 23.41 4.64825 23.48 5.58158C23.5617 6.51492 23.5967 7.31992 23.5967 8.01992L23.6667 8.99992C23.6667 11.5549 23.48 13.4333 23.1534 14.6349C22.8617 15.6849 22.185 16.3616 21.135 16.6533C20.5867 16.8049 19.5834 16.9099 18.0434 16.9799C16.5267 17.0616 15.1384 17.0966 13.855 17.0966L12 17.1666C7.11171 17.1666 4.06671 16.9799 2.86504 16.6533C1.81504 16.3616 1.13837 15.6849 0.846707 14.6349C0.695041 14.0866 0.590041 13.3516 0.520041 12.4183C0.438374 11.4849 0.403374 10.6799 0.403374 9.97992L0.333374 8.99992C0.333374 6.44492 0.520041 4.56659 0.846707 3.36492C1.13837 2.31492 1.81504 1.63825 2.86504 1.34659C3.41337 1.19492 4.41671 1.08992 5.95671 1.01992C7.47337 0.938252 8.86171 0.903252 10.145 0.903252L12 0.833252C16.8884 0.833252 19.9334 1.01992 21.135 1.34659C22.185 1.63825 22.8617 2.31492 23.1534 3.36492Z"
-                    fill="#D17D2F"
-                  />
-                </svg>
-              </a>
-            </li>
-            <li class="footer__social-item">
-              <a href="#" class="footer__social-link footer__link"
-                ><svg
-                  width="24"
-                  height="24"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M12 0.625C5.71768 0.625 0.625 5.71768 0.625 12C0.625 18.2823 5.71768 23.375 12 23.375C18.2823 23.375 23.375 18.2823 23.375 12C23.375 5.71768 18.2823 0.625 12 0.625ZM16.3746 13.4586C16.3746 13.4586 17.3806 14.4515 17.6283 14.9125C17.6354 14.922 17.6389 14.9314 17.6413 14.9362C17.742 15.1056 17.7657 15.2371 17.7159 15.3355C17.633 15.499 17.3486 15.5796 17.2515 15.5867H15.4741C15.3509 15.5867 15.0926 15.5547 14.7798 15.339C14.5392 15.1708 14.3023 14.8947 14.0712 14.6257C13.7264 14.2252 13.4278 13.8792 13.1268 13.8792C13.0886 13.8792 13.0506 13.8852 13.0143 13.897C12.7868 13.9705 12.4953 14.2951 12.4953 15.1601C12.4953 15.4303 12.282 15.5855 12.1315 15.5855H11.3175C11.0402 15.5855 9.59585 15.4883 8.31616 14.1387C6.74973 12.4858 5.3397 9.17047 5.32785 9.13966C5.23898 8.92519 5.42264 8.81026 5.62289 8.81026H7.41801C7.65736 8.81026 7.73556 8.956 7.79006 9.08516C7.85405 9.23564 8.08866 9.83401 8.47375 10.507C9.09819 11.6042 9.48091 12.0498 9.7878 12.0498C9.84534 12.0491 9.90186 12.0344 9.9525 12.0071C10.353 11.7843 10.2783 10.3565 10.2606 10.0603C10.2606 10.0046 10.2594 9.42167 10.0544 9.14203C9.90747 8.93941 9.65746 8.8624 9.50579 8.83396C9.56718 8.74925 9.64806 8.68057 9.74159 8.63371C10.0165 8.49626 10.5118 8.47612 11.0035 8.47612H11.2772C11.8104 8.48323 11.9479 8.51759 12.141 8.56617C12.532 8.65978 12.5403 8.91216 12.5059 9.77595C12.4953 10.0212 12.4846 10.2985 12.4846 10.6255C12.4846 10.6966 12.4811 10.7724 12.4811 10.853C12.4692 11.2926 12.455 11.7915 12.7654 11.9964C12.8059 12.0218 12.8527 12.0354 12.9005 12.0355C13.0083 12.0355 13.333 12.0355 14.2122 10.5272C14.4833 10.0417 14.719 9.53717 14.9172 9.01762C14.935 8.98681 14.9871 8.89202 15.0487 8.85529C15.0942 8.8321 15.1446 8.82031 15.1957 8.82092H17.306C17.5358 8.82092 17.6934 8.85529 17.723 8.94415C17.7752 9.08516 17.7136 9.51527 16.7502 10.8198L16.3201 11.3874C15.4469 12.532 15.4469 12.5901 16.3746 13.4586Z"
-                    fill="#D17D2F"
-                  />
-                </svg>
-              </a>
-            </li>
+          <ul class="goods__list">
           </ul>
-        </address>
+        </div>
 
-        <ul class="footer__dev">
-          <li class="footer__dev-item">
-            Designer: <a class="footer__link" href="/">Anastasia Ilina</a>
+        <section class="cart">
+          <div class="cart__container">
+            <div class="cart__header">
+              <h3 class="cart__title">Ваш заказ</h3>
+
+              <button class="cart__close">
+                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="5" y="5.70715" width="1" height="25"
+                    transform="rotate(-45 5 5.70715)" fill="#D17D2F" />
+                  <rect x="22.6777" y="5" width="1" height="25"
+                    transform="rotate(45 22.6777 5)" fill="#D17D2F" />
+                </svg>
+              </button>
+            </div>
+
+            <p class="cart__date-delivery">сегодня в 14:00</p>
+
+            <ul class="cart__list">
+            </ul>
+
+            <div class="cart__footer">
+              <button class="cart__order-btn">Оформить</button>
+              <p class="cart__price cart__price_total">0&nbsp;₽</p>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <div class="container">
+        <h2 class="subscribe__title">Подпишись на&nbsp;рассылку</h2>
+
+        <form class="subscribe__form" action="#">
+          <input class="subscribe__input" type="email" name="email"
+            placeholder="E-mail">
+
+          <button class="subscribe__button">
+            <svg width="12" height="20" viewBox="0 0 12 20" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M0.166687 6.66667C0.78502 6.66667 1.70835 6.05583 2.48335 5.4375C3.48335 4.6425 4.35585 3.6925 5.02169 2.60333C5.52085 1.78667 6.00002 0.796667 6.00002 0M6.00002 0C6.00002 0.796667 6.47919 1.7875 6.97835 2.60333C7.64502 3.6925 8.51752 4.6425 9.51585 5.4375C10.2917 6.05583 11.2167 6.66667 11.8334 6.66667M6.00002 0V20"
+                stroke="white" />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__container">
+      <img class="footer__logo" src="img/logo.svg"
+        alt="Логотип Mirano Flower Boutique">
+
+      <address class="footer__address">
+        <a class="footer__mail"
+          href="mailto:Mirano@gmail.com">Mirano@gmail.com</a>
+
+        <ul class="footer__social-list">
+          <li class="footer__social-item">
+            <a class="footer__link" href="#">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 2.625C7.721 2.625 2.625 7.721 2.625 14C2.625 20.279 7.721 25.375 14 25.375C20.279 25.375 25.375 20.279 25.375 14C25.375 7.721 20.279 2.625 14 2.625ZM19.278 10.36C19.1074 12.1573 18.368 16.5253 17.9926 18.5386C17.8334 19.3918 17.5149 19.6761 17.2191 19.7103C16.5594 19.7671 16.0589 19.278 15.4219 18.8571C14.4209 18.1974 13.8521 17.7879 12.8853 17.1509C11.7591 16.4115 12.4871 16.002 13.1355 15.3423C13.3061 15.1716 16.2181 12.5212 16.275 12.2824C16.2829 12.2462 16.2818 12.2086 16.2719 12.173C16.262 12.1373 16.2436 12.1045 16.2181 12.0776C16.1499 12.0208 16.0589 12.0435 15.9792 12.0549C15.8769 12.0776 14.2844 13.1355 11.179 15.2285C10.724 15.5356 10.3145 15.6949 9.9505 15.6835C9.541 15.6721 8.7675 15.456 8.18738 15.2626C7.47075 15.0351 6.91337 14.91 6.95888 14.5119C6.98163 14.3071 7.266 14.1024 7.80063 13.8863C11.1221 12.4416 13.3289 11.4861 14.4323 11.0311C17.5945 9.71163 18.2429 9.48413 18.6751 9.48413C18.7661 9.48413 18.9823 9.50688 19.1188 9.62063C19.2325 9.71163 19.2666 9.83675 19.278 9.92775C19.2666 9.996 19.2894 10.2008 19.278 10.36Z"
+                  fill="#D17D2F" />
+              </svg>
+            </a>
           </li>
-          <li class="footer__dev-item">
-            Developer: <a class="footer__link" href="/">Anna Boldyreva</a>
+
+          <li class="footer__social-item">
+            <a class="footer__link" href="#">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M11.6667 17.4999L17.7217 13.9999L11.6667 10.4999V17.4999ZM25.1534 8.36492C25.305 8.91325 25.41 9.64825 25.48 10.5816C25.5617 11.5149 25.5967 12.3199 25.5967 13.0199L25.6667 13.9999C25.6667 16.5549 25.48 18.4333 25.1534 19.6349C24.8617 20.6849 24.185 21.3616 23.135 21.6533C22.5867 21.8049 21.5834 21.9099 20.0434 21.9799C18.5267 22.0616 17.1384 22.0966 15.855 22.0966L14 22.1666C9.11171 22.1666 6.06671 21.9799 4.86504 21.6533C3.81504 21.3616 3.13837 20.6849 2.84671 19.6349C2.69504 19.0866 2.59004 18.3516 2.52004 17.4183C2.43837 16.4849 2.40337 15.6799 2.40337 14.9799L2.33337 13.9999C2.33337 11.4449 2.52004 9.56659 2.84671 8.36492C3.13837 7.31492 3.81504 6.63825 4.86504 6.34659C5.41337 6.19492 6.41671 6.08992 7.95671 6.01992C9.47337 5.93825 10.8617 5.90325 12.145 5.90325L14 5.83325C18.8884 5.83325 21.9334 6.01992 23.135 6.34659C24.185 6.63825 24.8617 7.31492 25.1534 8.36492Z"
+                  fill="#D17D2F" />
+              </svg>
+            </a>
+          </li>
+
+          <li class="footer__social-item">
+            <a class="footer__link" href="#">
+              <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M14 2.625C7.71768 2.625 2.625 7.71768 2.625 14C2.625 20.2823 7.71768 25.375 14 25.375C20.2823 25.375 25.375 20.2823 25.375 14C25.375 7.71768 20.2823 2.625 14 2.625ZM18.3746 15.4586C18.3746 15.4586 19.3806 16.4515 19.6283 16.9125C19.6354 16.922 19.6389 16.9314 19.6413 16.9362C19.742 17.1056 19.7657 17.2371 19.7159 17.3355C19.633 17.499 19.3486 17.5796 19.2515 17.5867H17.4741C17.3509 17.5867 17.0926 17.5547 16.7798 17.339C16.5392 17.1708 16.3023 16.8947 16.0712 16.6257C15.7264 16.2252 15.4278 15.8792 15.1268 15.8792C15.0886 15.8792 15.0506 15.8852 15.0143 15.897C14.7868 15.9705 14.4953 16.2951 14.4953 17.1601C14.4953 17.4303 14.282 17.5855 14.1315 17.5855H13.3175C13.0402 17.5855 11.5958 17.4883 10.3162 16.1387C8.74973 14.4858 7.3397 11.1705 7.32785 11.1397C7.23898 10.9252 7.42264 10.8103 7.62289 10.8103H9.41801C9.65736 10.8103 9.73556 10.956 9.79006 11.0852C9.85405 11.2356 10.0887 11.834 10.4737 12.507C11.0982 13.6042 11.4809 14.0498 11.7878 14.0498C11.8453 14.0491 11.9019 14.0344 11.9525 14.0071C12.353 13.7843 12.2783 12.3565 12.2606 12.0603C12.2606 12.0046 12.2594 11.4217 12.0544 11.142C11.9075 10.9394 11.6575 10.8624 11.5058 10.834C11.5672 10.7493 11.6481 10.6806 11.7416 10.6337C12.0165 10.4963 12.5118 10.4761 13.0035 10.4761H13.2772C13.8104 10.4832 13.9479 10.5176 14.141 10.5662C14.532 10.6598 14.5403 10.9122 14.5059 11.776C14.4953 12.0212 14.4846 12.2985 14.4846 12.6255C14.4846 12.6966 14.4811 12.7724 14.4811 12.853C14.4692 13.2926 14.455 13.7915 14.7654 13.9964C14.8059 14.0218 14.8527 14.0354 14.9005 14.0355C15.0083 14.0355 15.333 14.0355 16.2122 12.5272C16.4833 12.0417 16.719 11.5372 16.9172 11.0176C16.935 10.9868 16.9871 10.892 17.0487 10.8553C17.0942 10.8321 17.1446 10.8203 17.1957 10.8209H19.306C19.5358 10.8209 19.6934 10.8553 19.723 10.9442C19.7752 11.0852 19.7136 11.5153 18.7502 12.8198L18.3201 13.3874C17.4469 14.532 17.4469 14.5901 18.3746 15.4586Z"
+                  fill="#D17D2F" />
+              </svg>
+            </a>
           </li>
         </ul>
+      </address>
 
-        <p class="footer__copyright">&copy; MIRANO, 2024</p>
-      </div>
-    </footer>
+      <div class="footer__developers">
+        <p class="footer__developers-title">Проект сделан в учебных целях</p>
 
-    <div class="modal">
-      <h2 class="modal__title">Оформить заказ</h2>
-      <div class="modal__body">
-        <div class="modal__customer-details">
-          <h3 class="modal__subtitle">Данные заказчика</h3>
-          <input class="modal__input" type="text" placeholder="Имя" />
-          <input class="modal__input" type="text" placeholder="Телефон" />
-        </div>
-        <div class="modal__recipient-details">
-          <h3 class="modal__subtitle">Данные получателя</h3>
-          <input class="modal__input" type="text" placeholder="Имя" />
-          <input class="modal__input" type="text" placeholder="Телефон" />
-        </div>
-        <div class="modal__address-details">
-          <h3 class="modal__subtitle">Адрес доставки</h3>
-          <fieldset class="modal__address">
-            <input
-              class="modal__input modal__input-address modal__input-address-street"
-              type="text"
-              placeholder="Улица"
-            />
-            <input
-              class="modal__input modal__input-address modal__input-address-house"
-              type="text"
-              placeholder="Дом"
-            />
-            <input
-              class="modal__input modal__input-address modal__input-address-house"
-              type="text"
-              placeholder="Квартира"
-            />
-          </fieldset>
-        </div>
-        <div class="modal__payment-method">
-          <h3 class="modal__subtitle">Оплата</h3>
-          <label class="modal__radio-label">
-            <input
-              class="modal__radio-input"
-              type="radio"
-              name="payment"
-              value="online"
-              checked
-            />
-            Онлайн
-          </label>
-        </div>
-        <div class="modal__delivery-details">
-          <p class="modal__date">Доставка 10.05.</p>
-          <select class="modal__select" name="delivery-time">
-            <option value="9-12">с 9:00 до 12:00</option>
-            <option value="12-15">с 12:00 до 15:00</option>
-            <option value="15-18">с 15:00 до 18:00</option>
-            <option value="18-21">с 18:00 до 21:00</option>
-          </select>
-        </div>
-        <div class="modal__price">
-          <p class="modal__price-value">90$</p>
-          <button type="button" class="modal__btn-order">Заказать</button>
-        </div>
+        <ul class="footer__developers-list">
+          <li class="footer__developers-item">
+            Designer: <a class="footer__link" href="Anastasia_Ilina">Anastasia
+              Ilina</a>
+          </li>
+          <li class="footer__developers-item">
+            Developer: <a class="footer__link" href="maksim_leskin">Makism
+              Leskin</a>
+          </li>
+        </ul>
       </div>
+
+      <p class="footer__copyright">©MIRANO, 2024</p>
     </div>
-  </body>
+  </footer>
+
+
+</body>
+
 </html>

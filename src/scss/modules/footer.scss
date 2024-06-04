@@ -1,9 +1,9 @@
-@use "../variables" as *;
+@use "../varibles" as *;
 @use "../media" as *;
 
 .footer {
   padding: 80px 0;
-  background: $footer url('/img/footer.svg') no-repeat;
+  background: $footer url("/img/figure.svg") no-repeat;
   background-position: bottom;
   background-size: 100%;
 
@@ -12,8 +12,9 @@
     flex-direction: column;
     align-items: center;
     gap: 60px;
-        @include tablet {
-       gap: 40px;
+
+    @include tablet {
+      gap: 40px;
     }
   }
 
@@ -32,35 +33,30 @@
 
   &__social-list {
     display: flex;
+    align-content: center;
     justify-content: center;
-    align-items: center;
     gap: 12px;
   }
 
-  &__social-item {
-
+  &__social {
   }
 
-  &__social-link {
+  &__developers-title {
+    margin-bottom: 3px;
   }
 
-  &__dev {
-        margin-bottom: 3px;
-
+  &__developers-list {
   }
 
-  &__dev-item {
-        &:last-child {
+  &__developers-item {
+    margin-bottom: 3px;
+
+    &:last-child {
       margin-bottom: 0;
     }
-
   }
 
   &__copyright {
     text-transform: uppercase;
-  }
-
-  &__link {
-
   }
 }
