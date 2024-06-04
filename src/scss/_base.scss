@@ -1,4 +1,4 @@
-@use "./variables" as *;
+@use "./varibles" as *;
 @use "./media" as *;
 
 :root {
@@ -66,6 +66,7 @@ ul {
 h1,
 h2,
 h3,
+h4,
 p,
 figure,
 fieldset {
@@ -76,23 +77,10 @@ iframe {
   border: none;
 }
 
-/*
-Доступно скрываю элементы
-*/
-
 .visually-hidden {
   position: fixed;
   transform: scale(0);
 }
-
-/*
-Пример контейнера
-
-Если контейнер 1180px по макету,
-то для max-width прибавляем паддинги 30px*2, 
-в итоге 1240px
-Чтобы контент не прижимался к краям экрана
-*/
 
 .container {
   max-width: 1354px;

@@ -1,24 +1,26 @@
-@use "../variables" as *;
+@use "../varibles" as *;
 @use "../media" as *;
 
 .filter {
-  &__container {
+  &__form {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
     gap: 32px;
     flex-wrap: wrap;
   }
 
-  &__wrapper {
+  &__group {
     display: flex;
     flex-wrap: wrap;
-    border: 0; /* Removed duplicate border declaration */
+    border: 0;
     padding: 0;
     margin: 0;
     gap: 12px;
+
     &_choices {
       gap: 64px;
+
       @include mobile {
         gap: 40px;
       }
@@ -26,25 +28,45 @@
   }
 
   &__radio {
-    position: absolute;
     appearance: none;
+    position: absolute;
   }
 
   &__label {
-    display: inline-flex;
-    align-items: center;
-    padding: 10px 20px;
-    background: $white;
-    border-radius: 300px;
-    color: $dark;
+    padding: 16px;
+    padding-left: 60px;
     cursor: pointer;
+    border-radius: 300px;
+    background-color: $white;
+    color: $dark;
+    background-position: center left 16px;
+    background-repeat: no-repeat;
+    background-size: 40px;
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+
     @include mobile {
-      padding: 10px 12px;
+      padding: 10px 12px 10px 40px;
+      background-position: center left 12px;
+      background-size: 24px;
+      min-height: 40px;
+    }
+
+    &_flower {
+      background-image: url("/img/flowers.png");
+    }
+
+    &_toys {
+      background-image: url("/img/bear-toy.png");
+    }
+
+    &_postcard {
+      background-image: url("/img/postcard.png");
     }
 
     &:hover {
       background-color: $orange;
-      color: $white;
     }
   }
 
@@ -55,14 +77,6 @@
 
   &__radio:checked + &__label {
     background-color: $light-orange;
-  }
-
-  &__icon {
-    margin-right: 10px;
-    @include mobile {
-      width: 24px;
-      height: 24px;
-    }
   }
 
   &__choices {
@@ -78,15 +92,15 @@
       content: "";
       width: 8px;
       height: 8px;
-      background: url("/img/down.svg") no-repeat center/contain;
+      background: url("/img/arrow.svg") no-repeat center/contain;
     }
   }
 
   &__price {
-    display: flex;
-    border: 0; /* Removed duplicate border declaration */
+    border: 0;
     padding: 0;
     margin: 0;
+    display: flex;
     gap: 8px;
   }
 
@@ -94,21 +108,14 @@
     position: absolute;
     top: calc(100% + 20px);
     left: 50%;
-    transform: translate(-50%);
-    background: $white;
+    transform: translateX(-50%);
+    background-color: $white;
     padding: 24px;
     border-radius: 12px;
 
     &_type {
       padding: 16px;
     }
-
-    @include mobile {
-      /* Mobile styles go here if needed */
-    }
-  }
-
-  &__price {
   }
 
   &__input-price {
@@ -116,45 +123,34 @@
     padding: 8px 16px;
     width: 110px;
     height: 40px;
-    background: $bg;
+    background-color: $bg;
     border: none;
+
     @include mobile {
-      font-size: 14px;
-      width: 90px;
+      width: 80px;
     }
   }
 
   &__type-list {
-   
   }
 
   &__type-item {
     margin-bottom: 8px;
-    &:last-child{
+
+    &:last-child {
       margin-bottom: 0;
     }
   }
 
   &__type-button {
     white-space: nowrap;
+
     &:hover {
       color: $light-orange;
     }
-      &_active {
+
+    &_active {
       color: $orange;
-    }
-  }
-}
-
-.choices {
-  &__button {
-  }
-
-  &__box {
-    display: none;
-
-    &_open {
-      display: block;
     }
   }
 }

@@ -1,0 +1,82 @@
+@use "../varibles" as *;
+@use "../media" as *;
+
+.card {
+  background-color: $white;
+  border-radius: 32px;
+  overflow: hidden;
+  min-height: 531px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+  @include mobile {
+    min-height: 380px;
+    border-radius: 20px;
+  }
+
+  &__image {
+    object-fit: cover;
+    width: 100%;
+    height: 359px;
+
+    @include mobile {
+      height: 180px;
+    }
+  }
+
+  &__content {
+    padding: 32px 16px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @include mobile {
+      padding: 16px 12px;
+    }
+  }
+
+  &__title {
+    flex-grow: 1;
+    font-weight: 400;
+    font-size: 18px;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+
+    @include mobile {
+      align-items: stretch;
+
+      flex-direction: column;
+    }
+  }
+
+  &__date-delivery {
+    padding-left: 20px;
+    background-image: url("/img/delivery.svg");
+    background-repeat: no-repeat;
+    background-position: left bottom;
+    font-size: 14px;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
+
+  &__button {
+    border-radius: 32px;
+    padding: 8px 16px;
+    min-width: 120px;
+    color: $white;
+    background: $light-orange;
+  }
+
+  &__button-text {
+    display: none;
+  }
+}

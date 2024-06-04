@@ -1,13 +1,13 @@
-import { fetchProducts } from "./API";
 import { debounce } from "./debounce";
 import { callBackWithPreload } from "./preload";
+import { productStore } from "./Store";
 
 export const filterProducts = () => {
-  const filterForm = document.querySelector(".filter__container");  
+  const filterForm = document.querySelector(".filter__form");
   const goodsTitle = document.querySelector(".goods__title");
   const goodsSection = document.querySelector(".goods");
 
-  const applyFilters = () => {
+  const applyFilters = (category) => {
     const formData = new FormData(filterForm);
     const type = formData.get("type");
     const minPrice = formData.get("minPrice");
@@ -17,21 +17,21 @@ export const filterProducts = () => {
     if (type) params.type = type;
     if (minPrice) params.minPrice = minPrice;
     if (maxPrice) params.maxPrice = maxPrice;
-
-    fetchProducts(params);
-    callBackWithPreload(goodsSection, fetchProducts ,params);
+    if (category) params.category = category;
+    callBackWithPreload(goodsSection, productStore.fetchProducts(), params);
   };
-
-  const applyPriceFilters = debounce(applyFilters, 500);
 
   applyFilters();
 
+  const applyPriceFilters = debounce(applyFilters, 500);
+
   filterForm.addEventListener("input", (event) => {
     const target = event.target;
-    if (target.name == "type") {
+
+    if (target.name === "type") {
       goodsTitle.textContent = target.labels[0].textContent;
-      filterForm.maxPrice.value = "";
       filterForm.minPrice.value = "";
+      filterForm.maxPrice.value = "";
       applyFilters();
       return;
     }
@@ -40,23 +40,10 @@ export const filterProducts = () => {
       applyPriceFilters();
     }
   });
+
+  filterForm.addEventListener("click", ({ target }) => {
+    if (target.closest(".filter__type-button")) {
+      applyFilters(target.textContent);
+    }
+  });
 };
-
-// import { fetchProducts } from "./API";
-
-// const filterType = (type) => {
-//   fetchProducts({ type: type.value });
-// };
-
-// export const filterProducts = () => {
-//   const filterForm = document.querySelector(".filter__container");
-
-//   filterType(filterForm.type);
-
-//   filterForm.addEventListener("input", (event) => {
-//     const target = event.target;
-//     if (target.name == "type") {
-//       filterType(filterForm.type);
-//     }
-//   });
-// };
